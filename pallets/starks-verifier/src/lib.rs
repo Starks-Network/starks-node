@@ -20,8 +20,6 @@
 //! * `offchain_worker` - For validated offchain-workers to dispatch only,in order to 
 //! verify tasks.
 //! * `on_finalize` - Remove SettledTask which is expired at this block
-//!
-//! 
 //! 
 // Ensure we're `no_std` when compiling for Wasm.
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -446,7 +444,7 @@ impl<T: Config> Module<T> {
     /// Fetch the proof 
     /// 
     fn fetch_proof(program_hash: &T::Hash) -> OffchainResult<T, Vec<u8>> {
-        let proof_id = Self::task_params(program_hash).proof_id; // 由programhash，查询taskinfo，查询proof id
+        let proof_id = Self::task_params(program_hash).proof_id; 
         let deadline = sp_io::offchain::timestamp().add(Duration::from_millis(8_000));
 
         // Combine the the `proof_id` with a certain url 
@@ -515,7 +513,7 @@ impl<T: Config> Module<T> {
     fn task_to_execute(local_tasks: &mut Vec<T::Hash>) -> OffchainResult<T, T::Hash> {
         // on-chain ready-to-verify tasks,put all task_hash of OngoingTasks into a vec.
         let ongoing_tasks: Vec<T::Hash> = OngoingTasks::<T>::iter().map(|(hash, _)| hash).collect::<Vec<T::Hash>>();
-        local_tasks.sort(); //对本地对进行排序
+        local_tasks.sort(); 
         // find any one task that is not executed
         // TODO： find all tasks that are not executed 
         let task_hash = ongoing_tasks.into_iter()

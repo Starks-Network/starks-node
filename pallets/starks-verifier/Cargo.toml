@@ -17,7 +17,6 @@ sp-runtime = { default-features = false, git = "https://github.com/zCloak-Networ
 frame-support =  { default-features = false, git = "https://github.com/zCloak-Network/substrate" }
 frame-system =  { default-features = false, git = "https://github.com/zCloak-Network/substrate" }
 sp-keystore = { git = "https://github.com/zCloak-Network/substrate", optional = true }
-pallet-session = { default-features = false, git = "https://github.com/zCloak-Network/substrate" }
 log = { version = "0.4.14", default-features = false }
 # starks
 sp-starks = { path = "../../primitives/starks", default-features = false }
@@ -40,6 +39,5 @@ std = [
     "frame-system/std",
     "sp-starks/std",
     "sp-keystore",
-    "pallet-session/std",
     "log/std",
 ]

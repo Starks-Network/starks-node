@@ -3,7 +3,7 @@ use std::convert::TryInto;
 
 use super::*;
 use crate::mock::*;
-use sp_core::OpaquePeerId;
+use sp_core::{traits::TaskExecutorExt, testing::TaskExecutor};
 use sp_core::offchain::{
 	OffchainDbExt,
 	OffchainWorkerExt,
@@ -15,6 +15,7 @@ use frame_support::{dispatch, assert_ok, assert_noop, traits::OnFinalize};
 use sp_runtime::{testing::UintAuthorityId, transaction_validity::TransactionValidityError};
 use frame_support::traits::OffchainWorker;
 use sp_runtime::testing::TestSignature;
+
 
 #[test]
 fn set_key_works() {
@@ -78,8 +79,10 @@ fn should_create_task() {
 fn should_parse_http_response() {
 	let (offchain, offchain_state) = TestOffchainExt::new();
 	let mut ext = sp_io::TestExternalities::default();
+	
 	ext.register_extension(OffchainDbExt::new(offchain.clone()));
 	ext.register_extension(OffchainWorkerExt::new(offchain));
+	ext.register_extension(TaskExecutorExt::new(TaskExecutor::new()));
 
 	let (program_hash, inputs, outputs, proof_id) = task_params();
 

@@ -16,50 +16,50 @@ name = 'zcloak-node'
 targets = ['x86_64-unknown-linux-gnu']
 
 [build-dependencies]
-substrate-build-script-utils = {git = "https://github.com/Starks-Network/substrate"}
+substrate-build-script-utils = {git = "https://github.com/zCloak-Network/substrate"}
 
 [dependencies]
 jsonrpc-core = '15.1.0'
 structopt = '0.3.8'
 
 # local dependencies
-node-template-runtime = { path = '../runtime' }
+zcloak-runtime = { path = '../runtime' }
 sp-starks = { path = "../primitives/starks"}
 
 # Substrate dependencies
-sc-cli = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate", features = ["wasmtime"] }
-sp-core = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate" }
-sc-executor = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate", features = ["wasmtime"] }
-sc-service = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate", features = ["wasmtime"] }
-sc-telemetry = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-keystore = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sp-inherents = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-transaction-pool = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sp-transaction-pool = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-consensus-aura = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sp-consensus-aura = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sp-consensus = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sc-consensus = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sc-finality-grandpa = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sp-finality-grandpa = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-client-api = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sp-runtime = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
+sc-cli = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate", features = ["wasmtime"] }
+sp-core = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate" }
+sc-executor = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate", features = ["wasmtime"] }
+sc-service = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate", features = ["wasmtime"] }
+sc-telemetry = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-keystore = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-inherents = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-transaction-pool = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-transaction-pool = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-consensus-aura = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-consensus-aura = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-consensus = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-consensus = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-finality-grandpa = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-finality-grandpa = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-client-api = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-runtime = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
 
 # These dependencies are used for the node template's RPC
-sc-rpc = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sp-api = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-rpc-api = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-sp-blockchain = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sp-block-builder = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-sc-basic-authorship = { version = "0.9.0", git = "https://github.com/Starks-Network/substrate"}
-substrate-frame-rpc-system = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
-pallet-transaction-payment-rpc = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
+sc-rpc = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-api = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-rpc-api = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-blockchain = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sp-block-builder = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+sc-basic-authorship = { version = "0.9.0", git = "https://github.com/zCloak-Network/substrate"}
+substrate-frame-rpc-system = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
+pallet-transaction-payment-rpc = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
 
 # These dependencies are used for runtime benchmarking
-frame-benchmarking = { version = "3.1.0", git = "https://github.com/Starks-Network/substrate"}
-frame-benchmarking-cli = { version = "3.0.0", git = "https://github.com/Starks-Network/substrate"}
+frame-benchmarking = { version = "3.1.0", git = "https://github.com/zCloak-Network/substrate"}
+frame-benchmarking-cli = { version = "3.0.0", git = "https://github.com/zCloak-Network/substrate"}
 
 
 [features]
 default = []
-runtime-benchmarks = ['node-template-runtime/runtime-benchmarks']
+runtime-benchmarks = ['zcloak-runtime/runtime-benchmarks']

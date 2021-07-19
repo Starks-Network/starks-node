@@ -41,7 +41,6 @@ pub trait Starks {
         let proof = hex::decode(&body_str[0..body_str.len()-1]).map_err(|_| {
 			VerifyErr::NoHex
         })?;
-		log::debug!(target:"starks-verifier","proof is{:?} ", proof);
 		let stark_proof = bincode::deserialize::<starksVM::StarkProof>(&proof).map_err(|_| VerifyErr::SerializeErr)?;
 
 		let res = starksVM::verify(program_hash, public_inputs, outputs, &stark_proof);
